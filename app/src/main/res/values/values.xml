@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="linear_layout_manager">android.support.v7.widget.LinearLayoutManager</string>
+    <string name="grid_layout_manager">android.support.v7.widget.GridLayoutManager</string>
+</resources>

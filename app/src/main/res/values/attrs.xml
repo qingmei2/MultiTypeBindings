@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RecyclerView">
+        <attr name="items" format="reference" />
+        <attr name="itemLayout" format="reference" />
+        <attr name="linkers" format="reference" />
+        <attr name="layoutManager" format="reference" />
+        <attr name="onBindItem" format="reference" />
+    </declare-styleable>
+
+</resources>
