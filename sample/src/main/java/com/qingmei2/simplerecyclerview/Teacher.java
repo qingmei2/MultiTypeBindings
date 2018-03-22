@@ -3,9 +3,9 @@ package com.qingmei2.simplerecyclerview;
 public class Teacher {
 
     public String name;
-    public int age;
+    public String age;
 
-    public Teacher(String name, int age) {
+    public Teacher(String name, String age) {
         this.name = name;
         this.age = age;
     }

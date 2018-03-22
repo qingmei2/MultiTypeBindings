@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.annimon.stream.IntPair;
 import com.annimon.stream.Stream;
-import com.annimon.stream.function.Function;
 import com.qingmei2.multitype_binding.adapter.binder.DataBindingItemViewBinder;
 
 import java.util.Collections;
@@ -58,28 +57,6 @@ public class RecyclerViewBindingAdapter {
                         .findFirst()
                         .map(IntPair::getFirst)
                         .orElse(0));
-    }
-
-    public static class Linker {
-        private final Function<Object, Boolean> matcher;
-        private final int layoutId;
-
-        public static Linker of(Function<Object, Boolean> matcher, int layoutId) {
-            return new Linker(matcher, layoutId);
-        }
-
-        Linker(Function<Object, Boolean> matcher, int layoutId) {
-            this.matcher = matcher;
-            this.layoutId = layoutId;
-        }
-
-        Function<Object, Boolean> getMatcher() {
-            return matcher;
-        }
-
-        int getLayoutId() {
-            return layoutId;
-        }
     }
 
     @BindingAdapter("items")

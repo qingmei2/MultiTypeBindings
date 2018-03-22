@@ -17,9 +17,9 @@
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:itemLayout="@{@layout/item_student_list}"
-            app:items="@{activity.students}"
+            app:items="@{activity.showDatas}"
             app:layoutManager="@string/linear_layout_manager"
+            app:linkers="@{activity.linkers}"
             app:onBindItem="@{activity::onBindItem}" />
 
     </FrameLayout>
