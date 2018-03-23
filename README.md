@@ -48,7 +48,7 @@ dependencies {
 }
 ```
 
-###2、初始化Activity
+### 2、初始化Activity
 
 ```java
 public class MainActivity extends AppCompatActivity {
