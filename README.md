@@ -41,12 +41,14 @@ dependencies {
 请注意，multitype_bindings隐式地依赖了下面三个库，本库的代码并不多，相比较compile依赖，更建议您拉一下源码，进行个性化修改，或者添加个性化的BindingAdapter配置。
 
 ```groovy
+{
     api 'com.android.support:recyclerview-v7:26.1.0'    // recyclerview的依赖
     api 'me.drakeet.multitype:multitype:3.3.0'          // drakeet的multitype库
     api 'com.annimon:stream:1.1.9'                      // java8的兼容库
 }
+```
 
-### 2、初始化Activity
+###2、初始化Activity
 
 ```java
 public class MainActivity extends AppCompatActivity {
