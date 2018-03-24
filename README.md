@@ -38,7 +38,7 @@ dependencies {
 
 ```
 
-请注意，multitype_bindings隐式地依赖了下面三个库，本库的代码并不多，相比较compile依赖，更建议您拉一下源码，进行个性化修改，或者添加个性化的BindingAdapter配置。
+请注意，multitype_bindings隐式地依赖了下面三个库.
 
 ```groovy
 {
@@ -47,6 +47,8 @@ dependencies {
     api 'com.annimon:stream:1.1.9'                      // java8的兼容库
 }
 ```
+即使提供了gradle添加依赖的配置，我们依然建议您将源码拉下来，作为工具类在项目中修改使用或添加进行个性化配置。
+
 
 ### 2、初始化Activity
 
