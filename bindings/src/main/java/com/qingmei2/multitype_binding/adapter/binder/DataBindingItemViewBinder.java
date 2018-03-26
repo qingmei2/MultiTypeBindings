@@ -7,9 +7,9 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.annimon.stream.function.BiFunction;
 import com.qingmei2.multitype_binding.BR;
 import com.qingmei2.multitype_binding.adapter.holder.DataBindingViewHolder;
+import com.qingmei2.multitype_binding.function.BiFunction;
 
 import me.drakeet.multitype.ItemViewBinder;
 

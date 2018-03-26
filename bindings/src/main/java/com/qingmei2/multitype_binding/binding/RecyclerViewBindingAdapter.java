@@ -5,10 +5,10 @@ import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;
 
-import com.annimon.stream.IntPair;
-import com.annimon.stream.Stream;
 import com.qingmei2.multitype_binding.adapter.binder.DataBindingItemViewBinder;
+import com.qingmei2.multitype_binding.function.Function;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,7 +25,6 @@ public class RecyclerViewBindingAdapter {
     @BindingAdapter({"itemLayout", "onBindItem"})
     public static void setAdapter(RecyclerView view, int resId, DataBindingItemViewBinder.OnBindItem onBindItem) {
         final MultiTypeAdapter adapter = getOrCreateAdapter(view);
-        //noinspection unchecked
         adapter.register(Object.class, new DataBindingItemViewBinder(resId, onBindItem));
     }
 
@@ -42,21 +41,25 @@ public class RecyclerViewBindingAdapter {
     @BindingAdapter({"linkers", "onBindItem"})
     public static void setAdapter(RecyclerView view, List<Linker> linkers, DataBindingItemViewBinder.OnBindItem onBindItem) {
         final MultiTypeAdapter adapter = getOrCreateAdapter(view);
-        //noinspection unchecked
-        final ItemViewBinder[] binders = Stream.of(linkers)
-                .map(Linker::getLayoutId)
-                .map(v -> new DataBindingItemViewBinder(v, onBindItem))
-                .toArray(ItemViewBinder[]::new);
-        //noinspection unchecked
+        final ArrayList<ItemViewBinder> binders = new ArrayList<>();
+
+        for (Linker linker : linkers) {
+            binders.add(new DataBindingItemViewBinder(linker.getLayoutId(), onBindItem));
+        }
+        int size = binders.size();
+        ItemViewBinder[] array = binders.toArray(new ItemViewBinder[size]);
+
         adapter.register(Object.class)
-                .to(binders)
-                .withLinker(o -> Stream.of(linkers)
-                        .map(Linker::getMatcher)
-                        .indexed()
-                        .filter(v -> v.getSecond().apply(o))
-                        .findFirst()
-                        .map(IntPair::getFirst)
-                        .orElse(0));
+                .to(array)
+                .withLinker(o -> {
+                    for (int i = 0; i < linkers.size(); i++) {
+                        Function<Object, Boolean> matcher = linkers.get(i).getMatcher();
+                        if (matcher.apply(o)) {
+                            return i;
+                        }
+                    }
+                    return 0;
+                });
     }
 
     @BindingAdapter("items")

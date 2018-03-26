@@ -43,8 +43,7 @@ dependencies {
 ```groovy
 {
     api 'com.android.support:recyclerview-v7:26.1.0'    // recyclerview的依赖
-    api 'me.drakeet.multitype:multitype:3.3.0'          // drakeet的multitype库
-    api 'com.annimon:stream:1.1.9'                      // java8的兼容库
+    api 'me.drakeet.multitype:multitype:3.3.0'          // drakeet的multitype库**
 }
 ```
 即使提供了gradle添加依赖的配置，我们依然建议您将源码拉下来，作为工具类在项目中修改使用或添加进行个性化配置。

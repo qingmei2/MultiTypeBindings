@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 1
-        versionName "0.1.0"
+        versionCode 3
+        versionName '0.1.2'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -29,14 +29,13 @@ dependencies {
 
     api 'com.android.support:recyclerview-v7:26.1.0'
     api 'me.drakeet.multitype:multitype:3.3.0'
-    api 'com.annimon:stream:1.1.9'
 }
 
 publish {
     userOrg = 'mq2553299'
     groupId = 'com.github.qingmei2'
     artifactId = 'multitype_bindings'
-    publishVersion = '0.1.0'
+    publishVersion = '0.1.2'
     desc = '支持DataBinding的MultiType拓展库，可以实现最少的代码实现单类型/多类型的列表.'
     website = 'https://github.com/qingmei2/MultiTypeBindings'
 }

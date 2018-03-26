@@ -1,6 +1,6 @@
 package com.qingmei2.multitype_binding.binding;
 
-import com.annimon.stream.function.Function;
+import com.qingmei2.multitype_binding.function.Function;
 
 public class Linker {
     private final Function<Object, Boolean> matcher;
