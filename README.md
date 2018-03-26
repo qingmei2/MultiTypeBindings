@@ -33,12 +33,12 @@ android {
 ```groovy
 
 dependencies {
-    implementation 'com.github.qingmei2:multitype_bindings:0.1.0'
+    implementation 'com.github.qingmei2:multitype_bindings:0.1.2'
 }
 
 ```
 
-请注意，multitype_bindings隐式地依赖了下面三个库.
+请注意，multitype_bindings隐式地依赖了下面2个库.
 
 ```groovy
 {
@@ -46,7 +46,7 @@ dependencies {
     api 'me.drakeet.multitype:multitype:3.3.0'          // drakeet的multitype库**
 }
 ```
-即使提供了gradle添加依赖的配置，我们依然建议您将源码拉下来，作为工具类在项目中修改使用或添加进行个性化配置。
+这里提供了gradle添加依赖的配置以供快速开发，但我们依然建议您将源码拉下来，作为工具类在项目中修改使用或添加进行个性化配置。
 
 
 ### 2、初始化Activity
