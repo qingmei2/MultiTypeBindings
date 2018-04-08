@@ -146,6 +146,6 @@ public class MainActivity extends AppCompatActivity {
 
 ### 最后运行app，展示列表
 
-<div align="center"><img width="300" height="540" src="https://upload-images.jianshu.io/upload_images/7293029-603b368a243cf449.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div>
+<div align="left"><img width="300" height="540" src="https://upload-images.jianshu.io/upload_images/7293029-603b368a243cf449.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/></div>
 
 
