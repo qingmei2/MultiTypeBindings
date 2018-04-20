@@ -4,6 +4,10 @@ DataBinding库对RecyclerView列表的一种实现方式。
 
 [一行Java代码实现RecyclerViewAdapter?一行都不需要！](https://blog.csdn.net/mq2553299/article/details/79661821)
 
+这里提供了gradle添加依赖的方式以方便快速开发，但个人依然建议您fork源码，并进行个性化配置和修改，因为：
+
+> 这里仅仅是提供了实现列表的一种思路。
+
 ## 功能
 
 * xml配置 实现单类型列表
@@ -38,7 +42,7 @@ dependencies {
 
 ```
 
-请注意，multitype_bindings隐式地依赖了下面2个库.
+* 请注意，multitype_bindings隐式地依赖了下面2个库(但并不需要在gradle文件中声明它们).
 
 ```groovy
 {
@@ -46,7 +50,6 @@ dependencies {
     api 'me.drakeet.multitype:multitype:3.3.0'          // drakeet的multitype库**
 }
 ```
-这里提供了gradle添加依赖的配置以供快速开发，但我们依然建议您将源码拉下来，作为工具类在项目中修改使用或添加进行个性化配置。
 
 
 ### 2、初始化Activity
