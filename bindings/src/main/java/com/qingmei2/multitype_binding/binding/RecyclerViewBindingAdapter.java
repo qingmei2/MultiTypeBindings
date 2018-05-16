@@ -3,6 +3,7 @@ package com.qingmei2.multitype_binding.binding;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.databinding.BindingAdapter;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.qingmei2.multitype_binding.adapter.binder.DataBindingItemViewBinder;
@@ -60,6 +61,15 @@ public class RecyclerViewBindingAdapter {
                     }
                     return 0;
                 });
+    }
+
+    @BindingAdapter("onLoadMore")
+    public static void setItems(RecyclerView view, OnLoadMore listener) {
+        if (view.getLayoutManager() instanceof LinearLayoutManager) {
+            new LoadMoreDelegate(listener).attach(view);
+        } else {
+            throw new IllegalStateException("The OnLoadMore only support LinearLayoutManager");
+        }
     }
 
     @BindingAdapter("items")

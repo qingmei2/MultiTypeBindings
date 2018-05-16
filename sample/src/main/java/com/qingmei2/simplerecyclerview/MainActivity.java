@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     public final ObservableArrayList<Linker> linkers = new ObservableArrayList<>();
 
+    public int loadCount = 0;
+
     {
         for (int i = 0; i < 20; i++) {
             if (i % 3 != 0)
@@ -48,5 +50,24 @@ public class MainActivity extends AppCompatActivity {
         binding.getRoot().setOnClickListener(v ->
                 Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
         );
+    }
+
+    public void onLoadMore() {
+        Toast.makeText(this, "模拟请求更多数据", Toast.LENGTH_SHORT).show();
+        mockLoadMoreDatas();
+    }
+
+    /**
+     * 模拟上拉加载请求更多数据
+     */
+    private void mockLoadMoreDatas() {
+        if (loadCount >= 20) {
+            Toast.makeText(this, "没有更多数据了", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        for (int i = 0; i < 10; i++) {
+            showDatas.add(new Student("New 学生:" + i));
+            loadCount++;
+        }
     }
 }

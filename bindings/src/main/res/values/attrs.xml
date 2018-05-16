@@ -7,6 +7,7 @@
         <attr name="linkers" format="reference" />
         <attr name="layoutManager" format="reference" />
         <attr name="onBindItem" format="reference" />
+        <attr name="onLoadMore" format="reference" />
     </declare-styleable>
 
 </resources>

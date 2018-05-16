@@ -20,7 +20,8 @@
             app:items="@{activity.showDatas}"
             app:layoutManager="@string/linear_layout_manager"
             app:linkers="@{activity.linkers}"
-            app:onBindItem="@{activity::onBindItem}" />
+            app:onBindItem="@{activity::onBindItem}"
+            app:onLoadMore="@{activity::onLoadMore}" />
 
     </FrameLayout>
 
