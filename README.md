@@ -1,12 +1,30 @@
-# MultiTypeBindings
+# [DEPRECATED] MultiTypeBindings
 
 DataBinding库对RecyclerView列表的一种实现方式。
 
-[一行Java代码实现RecyclerViewAdapter?一行都不需要！](https://blog.csdn.net/mq2553299/article/details/79661821)
+[零行Java代码实现RecyclerView](https://blog.csdn.net/mq2553299/article/details/79661821)
 
 这里提供了gradle添加依赖的方式以方便快速开发，但个人依然建议您fork源码，并进行个性化配置和修改，因为：
 
 > 这里仅仅是提供了实现列表的一种思路。
+
+## 废弃通知（2018/10/30）
+
+距离发布[这篇博客](https://blog.csdn.net/mq2553299/article/details/79661821)时隔数月，不少的同行针对我的实现方式提出了各种各样的问题，包括但不限于：
+
+> XXXXX(上拉加载更多，错误界面的展示，Header或者Footer)怎么实现？
+
+回顾初心，我写当初这篇博客的目的是 **展示一种不同的实现思路**，但这种实现方式并非是**非常优秀**的，从某种意义上讲，我认为这种方式也存在一些弊端（比如，依赖Databinding库，必须在`Activity`容器实现回调函数的不友好等），因此我一直在强调，**这个仓库只是一个Demo，仅供参考**。
+
+现在我把这个库废弃了，原因有二，**最主要的原因是**：从面向对象的编程思想来看，我个人不赞同将和列表展示无直接关联的功能 放在 RecyclerView的Adapter中（包括上拉加载，下拉刷新，以及异常页面），google官方出了一个单独的SwipeRefreshView而没有出一个SwipeRefreshAdapter，我相信也是有这样一部分的原因，因此我建议将上述不同的功能和`RecyclerView`的`Adapter`进行隔离。
+
+**其次**，半年后的我不再满意于这样的实现方式，我更沉迷于[这个Demo中新的实践](https://github.com/qingmei2/MVVM-Rhine),它达到了我上文中不同功能通过不同控件进行**绑定**，而又没有代码的强耦合掺和在一起的设计理念。
+
+相比star，我更看重学习过程中对 **编程思想** 的逐步理解，因此我决定废弃这个repo，**它不应该被您通过compile依赖在您的项目中**，对于`DataBinding`的学习者，我更希望看到它能加深您对DataBinding的本质即： **观察者模式（数据驱动视图）** 的理解。
+
+当然，考虑到Databinding实际项目的运用，我推荐这个仓库，至少目前为止，它是我比较满意的设计：
+
+> [MVVM-Rhine: MVVM+Jetpack架构的Github客户端](https://github.com/qingmei2/MVVM-Rhine)
 
 ## 功能
 
